@@ -1,0 +1,12 @@
+A:\Code\TimeTracker\TimeTracker.Shared\bin\Debug\net7.0\TimeTracker.Shared.deps.json
+A:\Code\TimeTracker\TimeTracker.Shared\bin\Debug\net7.0\TimeTracker.Shared.dll
+A:\Code\TimeTracker\TimeTracker.Shared\bin\Debug\net7.0\TimeTracker.Shared.pdb
+A:\Code\TimeTracker\TimeTracker.Shared\obj\Debug\net7.0\TimeTracker.Shared.csproj.AssemblyReference.cache
+A:\Code\TimeTracker\TimeTracker.Shared\obj\Debug\net7.0\TimeTracker.Shared.GeneratedMSBuildEditorConfig.editorconfig
+A:\Code\TimeTracker\TimeTracker.Shared\obj\Debug\net7.0\TimeTracker.Shared.AssemblyInfoInputs.cache
+A:\Code\TimeTracker\TimeTracker.Shared\obj\Debug\net7.0\TimeTracker.Shared.AssemblyInfo.cs
+A:\Code\TimeTracker\TimeTracker.Shared\obj\Debug\net7.0\TimeTracker.Shared.csproj.CoreCompileInputs.cache
+A:\Code\TimeTracker\TimeTracker.Shared\obj\Debug\net7.0\TimeTracker.Shared.dll
+A:\Code\TimeTracker\TimeTracker.Shared\obj\Debug\net7.0\refint\TimeTracker.Shared.dll
+A:\Code\TimeTracker\TimeTracker.Shared\obj\Debug\net7.0\TimeTracker.Shared.pdb
+A:\Code\TimeTracker\TimeTracker.Shared\obj\Debug\net7.0\ref\TimeTracker.Shared.dll
