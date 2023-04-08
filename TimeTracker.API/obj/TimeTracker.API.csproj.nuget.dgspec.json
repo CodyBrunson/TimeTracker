@@ -49,6 +49,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.4.0-pre06, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.1, )"

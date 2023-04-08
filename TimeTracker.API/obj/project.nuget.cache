@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "54Q0rW5CaVxIglfMENvafCZev2FGzn0JNNTmY/g/Z3KvxurhjodVZRgkjbyQ3DYop3SZKDXlCg5TGrMETSpu3A==",
+  "dgSpecHash": "QYYtv1rMC95CiBu+cUwsbn1rtec7QRg7etmN+4/SBh45mLm6M3gftgXqlZriDe2MR28cMIV/APiipHIYzAKYRw==",
   "success": true,
   "projectFilePath": "A:\\Code\\TimeTracker\\TimeTracker.API\\TimeTracker.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\CodyS\\.nuget\\packages\\mapster\\7.4.0-pre06\\mapster.7.4.0-pre06.nupkg.sha512",
+    "C:\\Users\\CodyS\\.nuget\\packages\\mapster.core\\1.2.1-pre04\\mapster.core.1.2.1-pre04.nupkg.sha512",
     "C:\\Users\\CodyS\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.1\\microsoft.aspnetcore.openapi.7.0.1.nupkg.sha512",
     "C:\\Users\\CodyS\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\CodyS\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",

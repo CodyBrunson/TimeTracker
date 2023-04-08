@@ -33,3 +33,5 @@ A:\Code\TimeTracker\TimeTracker.API\obj\Debug\net7.0\refint\TimeTracker.API.dll
 A:\Code\TimeTracker\TimeTracker.API\obj\Debug\net7.0\TimeTracker.API.pdb
 A:\Code\TimeTracker\TimeTracker.API\obj\Debug\net7.0\TimeTracker.API.genruntimeconfig.cache
 A:\Code\TimeTracker\TimeTracker.API\obj\Debug\net7.0\ref\TimeTracker.API.dll
+A:\Code\TimeTracker\TimeTracker.API\bin\Debug\net7.0\Mapster.dll
+A:\Code\TimeTracker\TimeTracker.API\bin\Debug\net7.0\Mapster.Core.dll
