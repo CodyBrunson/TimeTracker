@@ -32,9 +32,9 @@ public class TimeEntryController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<List<TimeEntryResponse>> CreateTimeEntry(TimeEntryCreateRequest timeEntry)
+    public async Task<ActionResult<List<TimeEntryResponse>>> CreateTimeEntry(TimeEntryCreateRequest timeEntry)
     {
-        return Ok(_timeEntryService.CreateNewTimeEntry(timeEntry));
+        return Ok(await _timeEntryService.CreateNewTimeEntry(timeEntry));
     }
 
     [HttpPut("{id}")]

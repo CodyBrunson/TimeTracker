@@ -28,10 +28,10 @@ public class TimeEntryService : ITimeEntryService
         return result.Adapt<List<TimeEntryResponse>>();
     }
 
-    public List<TimeEntryResponse> CreateNewTimeEntry(TimeEntryCreateRequest request)
+    public async Task<List<TimeEntryResponse>> CreateNewTimeEntry(TimeEntryCreateRequest request)
     {
         var newEntry = request.Adapt<TimeEntry>();
-        var result = _timeEntryRepository.CreateNewTimeEntry(newEntry);
+        var result = await _timeEntryRepository.CreateNewTimeEntry(newEntry);
         return result.Adapt<List<TimeEntryResponse>>();
     }
 
