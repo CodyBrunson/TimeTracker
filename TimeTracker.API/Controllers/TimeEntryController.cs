@@ -14,9 +14,9 @@ public class TimeEntryController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public ActionResult<TimeEntryResponse> GetTimeEntryById(int id)
+    public async Task<ActionResult<TimeEntryResponse>> GetTimeEntryById(int id)
     {
-        var result = _timeEntryService.GetTimeEntryById(id);
+        var result = await _timeEntryService.GetTimeEntryById(id);
         if (result is null)
         {
             return NotFound("TimeEntry with ID " + id + " does not exist.");
@@ -26,9 +26,9 @@ public class TimeEntryController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<List<TimeEntryResponse>> GetAllTimeEntries()
+    public async Task<ActionResult<List<TimeEntryResponse>>> GetAllTimeEntries()
     {
-        return Ok(_timeEntryService.GetAllTimeEntries());
+        return Ok(await _timeEntryService.GetAllTimeEntries());
     }
 
     [HttpPost]

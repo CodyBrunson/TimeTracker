@@ -2,8 +2,8 @@
 
 public interface ITimeEntryService
 {
-    TimeEntryResponse GetTimeEntryById(int id);
-    List<TimeEntryResponse> GetAllTimeEntries();
+    Task<TimeEntryResponse?> GetTimeEntryById(int id);
+    Task<List<TimeEntryResponse>> GetAllTimeEntries();
     Task<List<TimeEntryResponse>> CreateNewTimeEntry(TimeEntryCreateRequest request);
     List<TimeEntryResponse>? UpdateTimeEntry(int id, TimeEntryUpdateRequest request);
     
