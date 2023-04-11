@@ -37,27 +37,33 @@ public class TimeEntryRepository : ITimeEntryRepository
         return await _context.TimeEntries.ToListAsync();
     }
 
-    public List<TimeEntry>? UpdateTimeEntry(int id, TimeEntry timeEntry)
+    public async Task<List<TimeEntry>?> UpdateTimeEntry(int id, TimeEntry timeEntry)
     {
-        var entryToUpdateIndex = _timeEntries.FindIndex(t => t.Id == id);
-        if (entryToUpdateIndex == -1)
+        var dbTimeEntry = await _context.TimeEntries.FindAsync(id);
+        if (dbTimeEntry is null)
         {
             return null;
         }
 
-        _timeEntries[entryToUpdateIndex] = timeEntry;
-        return _timeEntries;
+        dbTimeEntry.Project = timeEntry.Project;
+        dbTimeEntry.Start = timeEntry.Start;
+        dbTimeEntry.End = timeEntry.End;
+        dbTimeEntry.DateUpdated = DateTime.Now;
+    
+        await _context.SaveChangesAsync();
+        return await GetAllTimeEntries();
     }
 
-    public List<TimeEntry>? DeleteTimeEntry(int id)
+    public async Task<List<TimeEntry>?> DeleteTimeEntry(int id)
     {
-        var entryToDeleteIndex = _timeEntries.FirstOrDefault(t => t.Id == id);
-        if (entryToDeleteIndex is null)
+        var dbTimeEntry = await _context.TimeEntries.FindAsync(id);
+        if (dbTimeEntry is null)
         {
             return null;
         }
 
-        _timeEntries.Remove(entryToDeleteIndex);
+        _context.TimeEntries.Remove(dbTimeEntry);
+        await _context.SaveChangesAsync();
         return _timeEntries;
     }
 }

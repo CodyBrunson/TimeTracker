@@ -38,9 +38,9 @@ public class TimeEntryController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public ActionResult<List<TimeEntryResponse>> UpdateTimeEntry(int id, TimeEntryUpdateRequest timeEntry)
+    public async Task<ActionResult<List<TimeEntryResponse>>> UpdateTimeEntry(int id, TimeEntryUpdateRequest timeEntry)
     {
-        var result = _timeEntryService.UpdateTimeEntry(id, timeEntry);
+        var result = await _timeEntryService.UpdateTimeEntry(id, timeEntry);
         if (result is null)
         {
             return NotFound("TimeEntry with ID " + id + " does not exist.");
@@ -50,9 +50,9 @@ public class TimeEntryController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public ActionResult<List<TimeEntryResponse>> DeleteTimeEntry(int id)
+    public async Task<ActionResult<List<TimeEntryResponse>>> DeleteTimeEntry(int id)
     {
-        var result = _timeEntryService.DeleteTimeEntry(id);
+        var result = await _timeEntryService.DeleteTimeEntry(id);
         if (result is null)
         {
             return NotFound("TimeEntry with ID " + id + " does not exist.");

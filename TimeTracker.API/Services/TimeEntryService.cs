@@ -35,10 +35,10 @@ public class TimeEntryService : ITimeEntryService
         return result.Adapt<List<TimeEntryResponse>>();
     }
 
-    public List<TimeEntryResponse>? UpdateTimeEntry(int id, TimeEntryUpdateRequest request)
+    public async Task<List<TimeEntryResponse>?> UpdateTimeEntry(int id, TimeEntryUpdateRequest request)
     {
         var updatedEntry = request.Adapt<TimeEntry>();
-        var result = _timeEntryRepository.UpdateTimeEntry(id, updatedEntry);
+        var result = await _timeEntryRepository.UpdateTimeEntry(id, updatedEntry);
         if (result is null)
         {
             return null;
@@ -46,9 +46,9 @@ public class TimeEntryService : ITimeEntryService
         return result.Adapt<List<TimeEntryResponse>>();
     }
 
-    public List<TimeEntryResponse>? DeleteTimeEntry(int id)
+    public async Task<List<TimeEntryResponse>?> DeleteTimeEntry(int id)
     {
-        var result = _timeEntryRepository.DeleteTimeEntry(id);
+        var result = await _timeEntryRepository.DeleteTimeEntry(id);
         if (result is null)
         {
             return null;
