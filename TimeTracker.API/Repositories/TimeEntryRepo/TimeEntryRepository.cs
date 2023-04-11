@@ -2,6 +2,8 @@
 
 public class TimeEntryRepository : ITimeEntryRepository
 {
+
+    private readonly DataContext _context;
     private static List<TimeEntry> _timeEntries = new()
     {
         new TimeEntry
@@ -11,6 +13,12 @@ public class TimeEntryRepository : ITimeEntryRepository
             End = DateTime.Now.AddHours(1)
         }
     };
+
+    public TimeEntryRepository(DataContext context)
+    {
+        _context = context;
+    }
+
     public TimeEntry? GetTimeEntryById(int id)
     {
         return _timeEntries.FirstOrDefault(t => t.Id == id);
@@ -20,10 +28,12 @@ public class TimeEntryRepository : ITimeEntryRepository
         return _timeEntries;
     }
 
-    public List<TimeEntry> CreateNewTimeEntry(TimeEntry timeEntry)
+    public async Task<List<TimeEntry>> CreateNewTimeEntry(TimeEntry timeEntry)
     {
-        _timeEntries.Add(timeEntry);
-        return _timeEntries;
+        _context.TimeEntries.Add(timeEntry);
+        await _context.SaveChangesAsync();
+
+        return await _context.TimeEntries.ToListAsync();
     }
 
     public List<TimeEntry>? UpdateTimeEntry(int id, TimeEntry timeEntry)
