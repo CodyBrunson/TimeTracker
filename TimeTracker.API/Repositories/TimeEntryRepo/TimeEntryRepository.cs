@@ -1,4 +1,4 @@
-﻿namespace TimeTracker.API.Repositories.TimeEntryRepo;
+﻿ namespace TimeTracker.API.Repositories.TimeEntryRepo;
 
 public class TimeEntryRepository : ITimeEntryRepository
 {
