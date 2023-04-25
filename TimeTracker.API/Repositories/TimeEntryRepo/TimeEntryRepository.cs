@@ -4,21 +4,10 @@ public class TimeEntryRepository : ITimeEntryRepository
 {
 
     private readonly DataContext _context;
-    private static List<TimeEntry> _timeEntries = new()
-    {
-        new TimeEntry
-        {
-            Id = 1,
-            Project = "Time Tracker App",
-            End = DateTime.Now.AddHours(1)
-        }
-    };
-
     public TimeEntryRepository(DataContext context)
     {
         _context = context;
     }
-
     public async Task<TimeEntry?> GetTimeEntryById(int id)
     {
         var timeEntry = await _context.TimeEntries.FindAsync(id);
@@ -64,6 +53,6 @@ public class TimeEntryRepository : ITimeEntryRepository
 
         _context.TimeEntries.Remove(dbTimeEntry);
         await _context.SaveChangesAsync();
-        return _timeEntries;
+        return await GetAllTimeEntries();
     }
 }
